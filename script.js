@@ -34,11 +34,13 @@ const checklist = () => {
     const i = document.createElement("i");
     i.classList.add("far","fa-check-square","icon")
     i.addEventListener("click", completeTask);
+
     return i;
 }
 const deletList = () => {
     const i = document.createElement("i");
     i.classList.add("fas","fa-trash-alt","trashIcon","icon");
+    i.addEventListener("click", deleteIcon);
     return i;
 }
 
@@ -48,6 +50,11 @@ const completeTask = (event) =>{
     elemento.classList.toggle("completeIcon");
     elemento.classList.toggle("far");
     console.log(elemento)
+}
+
+const deleteIcon = (event) =>{
+    const parent = event.target.parentElement;
+    parent.remove();
 }
 
 })()
